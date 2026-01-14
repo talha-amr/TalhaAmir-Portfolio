@@ -62,7 +62,7 @@ const Skills = () => {
                             }}
                         >
                             {/* Ambient Shadow */}
-                            <div className={`absolute inset-0 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 ${skill.glow ? 'bg-[var(--skill-color)] opacity-30' : 'bg-purple-900'}`} />
+                            <div className={`absolute inset-0 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 ${skill.glow ? 'bg-[var(--skill-color)] opacity-30' : 'bg-blue-800'}`} />
 
                             {/* Card Content */}
                             <div className="relative h-full bg-neutral-900/40 backdrop-blur-md rounded-[23px] p-8 border border-white/5 overflow-hidden flex flex-col items-center justify-center gap-6 transition-colors duration-500 group-hover:border-[var(--skill-color)]/30 group-hover:bg-neutral-900/60">
