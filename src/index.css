@@ -22,7 +22,7 @@ html.lenis body {
 }
 
 @utility my-container {
-  @apply max-w-[90vw] mx-auto px-6 md:px-[3vw] lg:max-w-[100vw];
+  @apply max-w-[90vw] mx-auto px-6 md:px-[3.5vw] lg:max-w-[100vw];
 }
 
 @theme {
@@ -61,7 +61,7 @@ h6 {
 }
 
 .animate-shimmer {
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 7s linear infinite;
 }
 
 .animate-border-beam {

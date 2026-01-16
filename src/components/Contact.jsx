@@ -15,7 +15,7 @@ const Contact = () => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState('idle'); // idle, success, error
+    const [submitStatus, setSubmitStatus] = useState('idle');
 
     const handleChange = (e) => {
         setFormState({
@@ -47,7 +47,6 @@ const Contact = () => {
             if (result.success === "true" || response.ok) {
                 setSubmitStatus('success');
                 setFormState({ name: '', email: '', message: '' });
-                // Reset success message after 5 seconds
                 setTimeout(() => setSubmitStatus('idle'), 5000);
             } else {
                 setSubmitStatus('error');
@@ -70,70 +69,57 @@ const Contact = () => {
         });
 
         tl.fromTo(".contact-text",
-            { opacity: 0, y: 30 },
-            { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out" }
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: "power2.out" }
         )
             .fromTo(formRef.current,
-                { opacity: 0, y: 50 },
-                { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-                "<"
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+                "-=0.5"
             );
 
     }, { scope: containerRef });
 
     return (
-        <section id="contact" className="min-h-screen relative bg-[#0a0a0a] flex items-center justify-center py-20 overflow-hidden" ref={containerRef}>
-            {/* Background Ambient Orb */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-[120px] pointer-events-none" />
-
-            <div className="my-container relative z-10 w-full max-w-6xl grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <section id="contact" className="min-h-screen relative bg-[#0b0b0d] flex items-center justify-center py-20 md:py-[5.55vw] overflow-hidden" ref={containerRef}>
+            <div className="my-container relative z-10 w-full max-w-6xl md:max-w-[90vw] grid lg:grid-cols-2 gap-12 md:gap-[4vw] lg:gap-[8vw] items-center justify-between">
 
                 {/* Left Side: Text Content */}
-                <div className="space-y-8 text-center lg:text-left">
-                    <h2 className="contact-text text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+                <div className="space-y-8 md:space-y-[2.5vw] text-center lg:text-left">
+                    <h2 className="contact-text text-4xl md:text-[4.5vw] font-semibold tracking-tight text-[#f5f5f7] leading-tight">
                         Let's build something <br />
-                        <span className="inline-block bg-[linear-gradient(110deg,#a78bfa,45%,#e879f9,55%,#a78bfa)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
-                            extraordinary.
-                        </span>
+                        <span className="text-[#a1a1a6]">extraordinary.</span>
                     </h2>
-                    <p className="contact-text text-neutral-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                    <p className="contact-text text-[#86868b] text-lg md:text-[1.5vw] leading-relaxed max-w-xl md:max-w-[45vw] mx-auto lg:mx-0 font-normal">
                         I'm currently looking for new opportunities. Whether you have a project in mind or just want to say hi, I'm always open to discussing new ideas.
                     </p>
 
-                    <div className="contact-text flex items-center justify-center lg:justify-start gap-6 pt-4">
-                        <a href="https://github.com/talha-amr" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-purple-500/30 hover:bg-purple-900/10 transition-all duration-300">
-                            <Github className="w-6 h-6 text-neutral-400 group-hover:text-purple-400 transition-colors" />
+                    <div className="contact-text flex items-center justify-center lg:justify-start gap-4 md:gap-[1.5vw] pt-4 md:pt-[1.5vw]">
+                        <a href="https://github.com/talha-amr" target="_blank" rel="noopener noreferrer" className="group p-4 md:p-[1.25vw] rounded-full bg-[#16181d] border border-white/5 hover:bg-[#1c1e24] transition-colors duration-300">
+                            <Github className="w-5 h-5 md:w-[1.6vw] md:h-[1.6vw] text-[#f5f5f7]" />
                         </a>
-                        <a href="https://www.linkedin.com/in/muhammad-talha-amir-843376329" target="_blank" rel="noopener noreferrer" className="group p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-purple-500/30 hover:bg-purple-900/10 transition-all duration-300">
-                            <Linkedin className="w-6 h-6 text-neutral-400 group-hover:text-purple-400 transition-colors" />
+                        <a href="https://www.linkedin.com/in/muhammad-talha-amir-843376329" target="_blank" rel="noopener noreferrer" className="group p-4 md:p-[1.25vw] rounded-full bg-[#16181d] border border-white/5 hover:bg-[#1c1e24] transition-colors duration-300">
+                            <Linkedin className="w-5 h-5 md:w-[1.6vw] md:h-[1.6vw] text-[#f5f5f7]" />
                         </a>
-                        <a href="mailto:tellyamir16@gmail.com" className="group p-4 rounded-2xl bg-neutral-900/50 border border-white/5 hover:border-purple-500/30 hover:bg-purple-900/10 transition-all duration-300">
-                            <Mail className="w-6 h-6 text-neutral-400 group-hover:text-purple-400 transition-colors" />
+                        <a href="mailto:tellyamir16@gmail.com" className="group p-4 md:p-[1.25vw] rounded-full bg-[#16181d] border border-white/5 hover:bg-[#1c1e24] transition-colors duration-300">
+                            <Mail className="w-5 h-5 md:w-[1.6vw] md:h-[1.6vw] text-[#f5f5f7]" />
                         </a>
                     </div>
                 </div>
 
-                {/* Right Side: Glassmorphic Form */}
-                <div ref={formRef} className="relative w-full max-w-md mx-auto lg:ml-auto">
-                    {/* Glow effect behind form */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl transform rotate-3 scale-105 opacity-50 pointer-events-none" />
-
+                {/* Right Side: Clean Form */}
+                <div ref={formRef} className="relative w-full lg:ml-auto">
                     <form
-                        className="relative bg-neutral-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl overflow-hidden"
+                        className="relative bg-[#16181d] border border-white/5 rounded-2xl p-8 md:p-[3.5vw] shadow-sm"
                         onSubmit={handleSubmit}
                     >
-                        {/* Form Shimmer Border */}
-                        <div className="absolute inset-0 pointer-events-none p-[1px] rounded-3xl overflow-hidden">
-                            <div className="absolute top-0 left-[-100%] h-full w-[40%] skew-x-[-25deg] bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" style={{ animationDuration: '4s' }} />
-                        </div>
-
-                        <div className="space-y-6 relative z-10">
+                        <div className="space-y-6 md:space-y-[2vw] relative z-10">
                             {/* Hidden Captcha for FormSubmit */}
                             <input type="hidden" name="_captcha" value="false" />
                             <input type="hidden" name="_template" value="table" />
 
-                            <div className="space-y-2">
-                                <label htmlFor="name" className="text-sm font-medium text-neutral-300 ml-1">Name</label>
+                            <div className="space-y-2 md:space-y-[0.8vw]">
+                                <label htmlFor="name" className="text-[13px] md:text-[1.1vw] font-medium text-[#f5f5f7] ml-1 md:ml-[0.27vw]">Name</label>
                                 <input
                                     type="text"
                                     id="name"
@@ -141,15 +127,15 @@ const Contact = () => {
                                     value={formState.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-5 py-4 bg-neutral-950/50 border border-neutral-800 rounded-xl text-neutral-200 placeholder-neutral-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full px-4 py-3 md:px-[1.5vw] md:py-[1.2vw] bg-[#0b0b0d] border border-white/10 rounded-lg md:rounded-[0.7vw] text-[#f5f5f7] placeholder-[#86868b] focus:outline-none focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] transition-all duration-200 text-base md:text-[1.2vw]"
                                     placeholder="John Doe"
                                     autoComplete="off"
                                     disabled={isSubmitting}
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="email" className="text-sm font-medium text-neutral-300 ml-1">Email</label>
+                            <div className="space-y-2 md:space-y-[0.8vw]">
+                                <label htmlFor="email" className="text-[13px] md:text-[1.1vw] font-medium text-[#f5f5f7] ml-1 md:ml-[0.27vw]">Email</label>
                                 <input
                                     type="email"
                                     id="email"
@@ -157,15 +143,15 @@ const Contact = () => {
                                     value={formState.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-5 py-4 bg-neutral-950/50 border border-neutral-800 rounded-xl text-neutral-200 placeholder-neutral-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full px-4 py-3 md:px-[1.5vw] md:py-[1.2vw] bg-[#0b0b0d] border border-white/10 rounded-lg md:rounded-[0.7vw] text-[#f5f5f7] placeholder-[#86868b] focus:outline-none focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] transition-all duration-200 text-base md:text-[1.2vw]"
                                     placeholder="john@example.com"
                                     autoComplete="off"
                                     disabled={isSubmitting}
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium text-neutral-300 ml-1">Message</label>
+                            <div className="space-y-2 md:space-y-[0.8vw]">
+                                <label htmlFor="message" className="text-[13px] md:text-[1.1vw] font-medium text-[#f5f5f7] ml-1 md:ml-[0.27vw]">Message</label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -173,7 +159,7 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     rows="4"
-                                    className="w-full px-5 py-4 bg-neutral-950/50 border border-neutral-800 rounded-xl text-neutral-200 placeholder-neutral-600 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full px-4 py-3 md:px-[1.5vw] md:py-[1.2vw] bg-[#0b0b0d] border border-white/10 rounded-lg md:rounded-[0.7vw] text-[#f5f5f7] placeholder-[#86868b] focus:outline-none focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] transition-all duration-200 resize-none text-base md:text-[1.2vw]"
                                     placeholder="Tell me about your project..."
                                     disabled={isSubmitting}
                                 />
@@ -182,24 +168,23 @@ const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full group mt-4 relative px-8 py-4 bg-neutral-100 hover:bg-white text-neutral-950 font-bold rounded-xl transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-1 flex items-center justify-center gap-2 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                className="w-full mt-2 md:mt-[0.55vw] px-8 py-3 md:px-[2.22vw] md:py-[0.83vw] bg-[#f5f5f7] hover:bg-white text-black font-medium rounded-lg md:rounded-[0.55vw] transition-all duration-200 flex items-center justify-center gap-2 md:gap-[0.55vw] disabled:opacity-70 disabled:cursor-not-allowed"
                             >
-                                <span className="relative z-10">
+                                <span>
                                     {isSubmitting ? 'Sending...' : submitStatus === 'success' ? 'Message Sent!' : 'Send Message'}
                                 </span>
                                 {!isSubmitting && submitStatus !== 'success' && (
-                                    <Send className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                                    <Send className="w-4 h-4 md:w-[1.11vw] md:h-[1.11vw]" />
                                 )}
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                             </button>
 
                             {submitStatus === 'success' && (
-                                <p className="text-green-400 text-sm text-center font-medium animate-pulse">
+                                <p className="text-green-500 text-sm text-center font-medium animate-pulse">
                                     Thanks! I'll get back to you soon.
                                 </p>
                             )}
                             {submitStatus === 'error' && (
-                                <p className="text-red-400 text-sm text-center font-medium">
+                                <p className="text-red-500 text-sm text-center font-medium">
                                     Something went wrong. Please try again.
                                 </p>
                             )}

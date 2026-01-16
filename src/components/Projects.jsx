@@ -1,8 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
+import { Timeline } from '@/components/ui/timeline';
 
 // Import Images
 import velvetPourImg from '../images/velvet-pour.png';
@@ -30,91 +28,66 @@ const projects = [
         title: "Zentry",
         status: "In Progress",
         description: "An ongoing project exploring modern layouts, interactive UI elements, and advanced animations.",
-        tags: ["React", "Three.js", "Vite"],
+        tags: ["React", "Vite"],
         link: "https://zentry-phi-blue.vercel.app/",
         image: zentryImg
     }
 ];
 
 const Projects = () => {
-    const comp = useRef(null);
+    // Transform projects data to match Timeline format
+    const timelineData = projects.map(project => ({
+        title: project.title,
+        content: (
+            <div className="space-y-6 md:space-y-[1.66vw]">
+                <p className="text-[#a1a1a6] text-base md:text-[1.4vw] leading-relaxed max-w-2xl md:max-w-[44vw] font-normal">
+                    {project.description}
+                </p>
 
-    useGSAP(() => {
-        gsap.fromTo(".project-card",
-            {
-                y: 100,
-                opacity: 0,
-                autoAlpha: 0
-            },
-            {
-                scrollTrigger: {
-                    trigger: "#projects",
-                    start: "top 75%",
-                },
-                y: 0,
-                opacity: 1,
-                autoAlpha: 1,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power3.out"
-            }
-        );
-    }, []);
-
-    return (
-        <section id="projects" className="py-32 bg-neutral-950">
-            <div className="my-container">
-                <div className="flex items-end justify-between mb-16">
-                    <h2 className="text-[2rem] md:text-[4vw] lg:text-[3vw] font-bold text-neutral-100 mt-2">Selected Work</h2>
-                    <span className="hidden md:block text-neutral-500 text-[0.875rem] md:text-[1vw] tracking-widest uppercase mb-2">2024 - 2025</span>
-                </div>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
-                        <a
-                            key={index}
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-card group relative block bg-neutral-900 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 ease-out border border-neutral-800 hover:border-neutral-700 hover:shadow-2xl hover:shadow-blue-900/10"
-                        >
-                            {/* Image Container */}
-                            <div className="aspect-[4/3] bg-neutral-800 w-full relative overflow-hidden">
-                                <div className="absolute inset-0 bg-neutral-950/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-
-                            <div className="p-6 md:p-8">
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className={`text-xs font-medium px-3 py-1 rounded-full border ${project.status === 'Completed' ? 'border-emerald-900/50 text-emerald-400 bg-emerald-950/20' : 'border-amber-900/50 text-amber-400 bg-amber-950/20'}`}>
-                                        {project.status}
-                                    </span>
-                                    <ArrowUpRight className="w-5 h-5 text-neutral-500 group-hover:text-neutral-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
-                                </div>
-
-                                <h3 className="text-xl font-bold text-neutral-200 mb-3 group-hover:text-blue-400 transition-colors">
-                                    {project.title}
-                                </h3>
-
-                                <p className="text-neutral-400 text-sm leading-relaxed mb-6">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="text-xs text-neutral-500">#{tag}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </a>
+                <div className="flex flex-wrap gap-2 md:gap-[0.55vw] mb-4 md:mb-[1.11vw]">
+                    {project.tags.map(tag => (
+                        <span key={tag} className="px-3 py-1 md:px-[1.1vw] md:py-[0.4vw] bg-white/5 border border-white/10 rounded-full text-xs md:text-[1.0vw] font-medium text-[#f5f5f7]">
+                            {tag}
+                        </span>
                     ))}
                 </div>
+
+                {/* Image Container - Full Visibility */}
+                <div className="relative w-full aspect-video rounded-xl md:rounded-[0.83vw] overflow-hidden bg-[#16181d] border border-white/5 shadow-2xl">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-contain object-center"
+                    />
+                </div>
+
+                <div className="pt-2 md:pt-[0.55vw]">
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 md:gap-[0.55vw] text-[#f5f5f7] hover:text-[#0071e3] transition-colors duration-300 font-medium text-sm md:text-[1.3vw] group"
+                    >
+                        Visit Project
+                        <ArrowUpRight className="w-4 h-4 md:w-[1.3vw] md:h-[1.3vw] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    </a>
+                </div>
             </div>
+        )
+    }));
+
+    return (
+        <section id="projects" className="py-20 md:py-[8.88vw] bg-[#0b0b0d]">
+            <div className="my-container mb-12 md:mb-[3.33vw] px-6 md:px-[2.77vw]">
+                <h2 className="text-3xl md:text-[7vw] font-bold text-[#f5f5f7] tracking-tight mb-4 md:mb-[1.11vw]">
+                    Selected Work
+                </h2>
+                <p className="text-[#a1a1a6] max-w-md md:max-w-[28vw] md:text-[1.25vw]">
+                    A timeline of recent commercial and personal projects.
+                </p>
+            </div>
+
+            <Timeline data={timelineData} />
         </section>
     );
 };

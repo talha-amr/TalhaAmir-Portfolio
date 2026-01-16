@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact } from 'react-icons/fa';
+import { useRef } from 'react';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub } from 'react-icons/fa';
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiGreensock } from "react-icons/si";
 import gsap from 'gsap';
@@ -23,73 +23,115 @@ const Skills = () => {
     const sectionRef = useRef(null);
 
     useGSAP(() => {
-        gsap.from(".tech-card", {
+        gsap.from(".skill-category", {
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 70%",
+                start: "top 80%",
             },
-            y: 100,
+            y: 30,
             opacity: 0,
-            duration: 1.2,
+            duration: 1,
             stagger: 0.1,
-            ease: "power3.out"
+            ease: "power2.out"
         });
     }, { scope: sectionRef });
 
     return (
-        <section id="skills" className="py-32 bg-[#0a0a0a] relative overflow-hidden" ref={sectionRef}>
-            {/* Dark Technical Dot Grid Background */}
-            <div className="absolute inset-0 bg-dot-pattern opacity-15 pointer-events-none" />
-
-            <div className="my-container relative z-10">
-                <div className="max-w-xl mx-auto text-center mb-16 space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-                        Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Technologies</span>
+        <section id="skills" className="min-h-screen flex flex-col justify-center py-20 md:py-[5.55vw] bg-[#0a0a0a] relative overflow-hidden" ref={sectionRef}>
+            <div className="my-container w-full relative z-10">
+                <div className="max-w-xl md:max-w-[65vw] mx-auto text-center mb-16 md:mb-[6.66vw] space-y-4 md:space-y-[1.38vw]">
+                    <h2 className="text-3xl md:text-[4.44vw] font-semibold text-[#f5f5f7] tracking-tight">
+                        Technical Expertise
                     </h2>
-                    <p className="text-neutral-500 text-sm uppercase tracking-widest font-medium">
-                        The modern stack I use to build digital products
+                    <p className="text-[#a1a1a6] text-base md:text-[1.38vw] font-normal max-w-lg md:max-w-[50vw] mx-auto leading-relaxed">
+                        A curated stack designed for precision and performance.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 perspective-1000">
-                    {skills.map((skill, index) => (
-                        <div
-                            key={skill.name}
-                            className={`tech-card relative group p-[1px] rounded-3xl animate-float`}
-                            style={{
-                                animationDelay: skill.delay,
-                                '--skill-color': skill.color
-                            }}
-                        >
-                            {/* Ambient Shadow */}
-                            <div className={`absolute inset-0 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 ${skill.glow ? 'bg-[var(--skill-color)] opacity-30' : 'bg-blue-800'}`} />
-
-                            {/* Card Content */}
-                            <div className="relative h-full bg-neutral-900/40 backdrop-blur-md rounded-[23px] p-8 border border-white/5 overflow-hidden flex flex-col items-center justify-center gap-6 transition-colors duration-500 group-hover:border-[var(--skill-color)]/30 group-hover:bg-neutral-900/60">
-
-                                {/* Shimmer Border Beam */}
-                                <div className="absolute inset-0 rounded-[23px] overflow-hidden pointer-events-none">
-                                    <div className="absolute top-0 left-[-100%] h-full w-[20%] skew-x-[-30deg] bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" style={{ animationDuration: '3s' }} />
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-[7vw] w-full">
+                    {/* Category: Frontend */}
+                    <div className="skill-category space-y-6 md:space-y-[2.5vw]">
+                        <h3 className="text-lg md:text-[1.66vw] font-medium text-[#f5f5f7] border-b border-white/10 pb-4 md:pb-[1.38vw]">Frontend Center</h3>
+                        <div className="space-y-4 md:space-y-[1.38vw]">
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <FaReact className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
                                 </div>
-
-                                <div
-                                    className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center bg-neutral-950/50 border border-white/5 transition-all duration-300 group-hover:scale-110 group-hover:border-[var(--skill-color)]/50 ${skill.glow ? 'shadow-[0_0_30px_-5px_var(--skill-color)] border-[var(--skill-color)]/30 scale-105' : 'group-hover:shadow-[0_0_30px_-5px_var(--skill-color)]'}`}
-                                >
-                                    <skill.icon
-                                        className={`w-8 h-8 transition-colors duration-300 ${skill.glow ? 'text-[var(--skill-color)]' : 'text-neutral-400 group-hover:text-[var(--skill-color)]'}`}
-                                    />
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">React</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Component Architecture</p>
                                 </div>
-
-                                <div className="text-center space-y-1">
-                                    <h4 className={`text-xl font-bold transition-colors duration-300 ${skill.glow ? 'text-white' : 'text-neutral-300 group-hover:text-white'}`}>
-                                        {skill.name}
-                                    </h4>
-                                    <div className={`h-1 w-8 mx-auto rounded-full transition-all duration-300 ${skill.glow ? 'bg-[var(--skill-color)]' : 'bg-neutral-800 group-hover:bg-[var(--skill-color)]'}`} />
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <RiTailwindCssFill className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
                                 </div>
-
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">Tailwind CSS</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Design Systems</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <SiGreensock className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">GSAP</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">cinematic Motion</p>
+                                </div>
                             </div>
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Category: Core */}
+                    <div className="skill-category space-y-6 md:space-y-[2.5vw]">
+                        <h3 className="text-lg md:text-[1.66vw] font-medium text-[#f5f5f7] border-b border-white/10 pb-4 md:pb-[1.38vw]">Core Foundations</h3>
+                        <div className="space-y-4 md:space-y-[1.38vw]">
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <FaJs className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">JavaScript (ES6+)</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Async Patterns & Logic</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <FaHtml5 className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">HTML5</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Semantic Structure</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <FaCss3Alt className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">CSS3</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Layouts & Animations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Category: Tools */}
+                    <div className="skill-category space-y-6 md:space-y-[2.5vw]">
+                        <h3 className="text-lg md:text-[1.66vw] font-medium text-[#f5f5f7] border-b border-white/10 pb-4 md:pb-[1.38vw]">Tools & Workflow</h3>
+                        <div className="space-y-4 md:space-y-[1.38vw]">
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <FaGithub className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">GitHub</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Version Control</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
