@@ -2,6 +2,7 @@
 
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useRef, forwardRef } from "react";
+import { TextScramble } from "./text-scramble";
 
 const Section1 = ({ scrollYProgress }) => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -13,18 +14,18 @@ const Section1 = ({ scrollYProgress }) => {
                 scale: typeof window !== 'undefined' && window.innerWidth >= 768 ? scale : 1,
                 rotate: typeof window !== 'undefined' && window.innerWidth >= 768 ? rotate : 0
             }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: typeof window !== 'undefined' && window.innerWidth >= 768 ? 1 : 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 1 }}
             className="relative h-[100svh] md:sticky md:top-0 md:h-screen bg-[#1F1F1F] flex flex-col items-center justify-center text-white overflow-hidden"
         >
             <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
             {/* Main Typography */}
             <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: typeof window !== 'undefined' && window.innerWidth >= 768 ? 1 : 0, y: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                transition={{ duration: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 0.2, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center justify-center text-center select-none"
             >
                 <h1 className="font-black text-[15vw] md:text-[12vw] leading-[0.82] tracking-tighter uppercase flex flex-col items-center">
@@ -45,9 +46,12 @@ const Section1 = ({ scrollYProgress }) => {
                     </span>
                 </h1>
 
-                <p className="mt-12 text-xl px-6 md:px-0 md:text-[1.38vw] text-neutral-400 font-light tracking-[0.2em] uppercase w-full text-center">
+                <TextScramble
+                    className="mt-12 text-xl px-6 md:px-0 md:text-[1.38vw] text-neutral-400 font-light tracking-[0.2em] uppercase w-full text-center"
+                    duration={1.2}
+                >
                     Frontend Engineer • React • Based in Lahore
-                </p>
+                </TextScramble>
 
                 <div className="pt-12 md:pt-[3.33vw]">
                     <a
