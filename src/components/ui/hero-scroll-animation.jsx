@@ -36,11 +36,11 @@ const Section1 = ({ scrollYProgress }) => {
 
                     {/* AMIR - Ghost Outline */}
                     <span
-                        className="text-transparent z-10 relative"
-                        style={{
-                            WebkitTextStroke: '1.5px white',
-                            textStroke: '1.5px white'
-                        }}
+                        // className="text-transparent z-10 relative"
+                        // style={{
+                        //     WebkitTextStroke: '1.5px white',
+                        //     textStroke: '1.5px white'
+                        // }}
                     >
                         Amir
                     </span>
