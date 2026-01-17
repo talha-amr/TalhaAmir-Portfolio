@@ -28,7 +28,7 @@ const Section1 = ({ scrollYProgress }) => {
                 transition={{ duration: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 0.8, delay: typeof window !== 'undefined' && window.innerWidth >= 768 ? 0 : 0.2, ease: "easeOut" }}
                 className="relative z-10 flex flex-col items-center justify-center text-center select-none"
             >
-                <h1 className="font-black text-[15vw] md:text-[12vw] leading-[0.82] tracking-tighter uppercase flex flex-col items-center">
+                <h1 className="font-black text-[7rem] md:text-[12vw] leading-[0.82] tracking-tighter uppercase flex flex-col items-center">
                     {/* TALHA - Solid High Contrast */}
                     <span className="text-white z-20 relative">
                         Talha
