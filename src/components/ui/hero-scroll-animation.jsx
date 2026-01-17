@@ -67,8 +67,6 @@ const Section1 = ({ scrollYProgress }) => {
     );
 };
 
-// ... lines omitted ...
-
 const Section2 = ({ scrollYProgress, children }) => {
     const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
     const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
@@ -94,7 +92,7 @@ const HeroScrollAnimation = forwardRef(({ children }, ref) => {
     });
 
     return (
-        <main ref={container} className="relative h-auto md:h-[200vh] bg-neutral-950">
+        <main ref={container} className="relative h-auto md:min-h-[200vh] bg-neutral-950">
             <Section1 scrollYProgress={scrollYProgress} />
             <Section2 scrollYProgress={scrollYProgress}>
                 {children}

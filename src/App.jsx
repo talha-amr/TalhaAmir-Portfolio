@@ -40,17 +40,20 @@ function App() {
                 <Hero>
                     <About />
                 </Hero>
-                <Skills />
-                <div className="py-20 md:py-[5.55vw] bg-[#0b0b0d]">
-                    <VelocityScroll
-                        text="Based in Lahore &nbsp; • &nbsp; Available for Freelance &nbsp; • &nbsp; Open for New Opportunities &nbsp; • &nbsp; Ready to Collaborate &nbsp; • &nbsp;"
-                        default_velocity={2}
-                        className="font-display text-center text-5xl font-bold tracking-[-0.02em] text-[#f5f5f7] drop-shadow-sm md:text-[4.5vw] md:leading-[1]"
-                    />
-                </div>
 
-                <Projects />
-                <Contact />
+                <div id="main-content" className="relative z-10 bg-[#0b0b0d]">
+                    <Skills />
+                    <div className="py-20 md:py-[5.55vw] bg-[#0b0b0d]">
+                        <VelocityScroll
+                            text="Based in Lahore &nbsp; • &nbsp; Available for Freelance &nbsp; • &nbsp; Open for New Opportunities &nbsp; • &nbsp; Ready to Collaborate &nbsp; • &nbsp;"
+                            default_velocity={2}
+                            className="font-display text-center text-5xl font-bold tracking-[-0.02em] text-[#f5f5f7] drop-shadow-sm md:text-[4.5vw] md:leading-[1]"
+                        />
+                    </div>
+
+                    <Projects />
+                    <Contact />
+                </div>
                 <Footer />
             </main>
         </ReactLenis>
@@ -58,3 +61,4 @@ function App() {
 }
 
 export default App;
+

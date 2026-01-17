@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import Magnetic from './ui/magnetic';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -165,18 +166,20 @@ const Contact = () => {
                                 />
                             </div>
 
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full mt-2 md:mt-[0.55vw] px-8 py-3 md:px-[2.22vw] md:py-[0.83vw] bg-[#f5f5f7] hover:bg-white text-black font-medium rounded-lg md:rounded-[0.55vw] transition-all duration-200 flex items-center justify-center gap-2 md:gap-[0.55vw] disabled:opacity-70 disabled:cursor-not-allowed"
-                            >
-                                <span>
-                                    {isSubmitting ? 'Sending...' : submitStatus === 'success' ? 'Message Sent!' : 'Send Message'}
-                                </span>
-                                {!isSubmitting && submitStatus !== 'success' && (
-                                    <Send className="w-4 h-4 md:w-[1.11vw] md:h-[1.11vw]" />
-                                )}
-                            </button>
+                            <Magnetic>
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full mt-2 md:mt-[0.55vw] px-8 py-3 md:px-[2.22vw] md:py-[0.83vw] bg-[#f5f5f7] hover:bg-white text-black font-medium rounded-lg md:rounded-[0.55vw] transition-all duration-200 flex items-center justify-center gap-2 md:gap-[0.55vw] disabled:opacity-70 disabled:cursor-not-allowed"
+                                >
+                                    <span>
+                                        {isSubmitting ? 'Sending...' : submitStatus === 'success' ? 'Message Sent!' : 'Send Message'}
+                                    </span>
+                                    {!isSubmitting && submitStatus !== 'success' && (
+                                        <Send className="w-4 h-4 md:w-[1.11vw] md:h-[1.11vw]" />
+                                    )}
+                                </button>
+                            </Magnetic>
 
                             {submitStatus === 'success' && (
                                 <p className="text-green-500 text-sm text-center font-medium animate-pulse">
