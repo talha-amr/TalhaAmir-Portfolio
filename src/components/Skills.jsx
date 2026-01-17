@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGithub } from 'react-icons/fa';
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiGreensock } from "react-icons/si";
+import { SiGreensock, SiFigma, SiAdobeillustrator, SiAdobephotoshop } from "react-icons/si";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -117,17 +117,35 @@ const Skills = () => {
                         </div>
                     </div>
 
-                    {/* Category: Tools */}
+                    {/* Category: Design & Tools */}
                     <div className="skill-category space-y-6 md:space-y-[2.5vw]">
-                        <h3 className="text-lg md:text-[1.66vw] font-medium text-[#f5f5f7] border-b border-white/10 pb-4 md:pb-[1.38vw]">Tools & Workflow</h3>
+                        <h3 className="text-lg md:text-[1.66vw] font-medium text-[#f5f5f7] border-b border-white/10 pb-4 md:pb-[1.38vw]">Design & Tools</h3>
                         <div className="space-y-4 md:space-y-[1.38vw]">
                             <div className="flex items-center gap-4 md:gap-[1.38vw] group">
                                 <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
-                                    <FaGithub className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                    <SiAdobephotoshop className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
                                 </div>
                                 <div>
-                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">GitHub</h4>
-                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Version Control</p>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">Photoshop</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Image Composition</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <SiFigma className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">Figma</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">UI/UX Design</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4 md:gap-[1.38vw] group">
+                                <div className="p-3 md:p-[1.11vw] rounded-xl md:rounded-[0.83vw] bg-[#16181d] border border-white/5 group-hover:bg-[#1c1e24] transition-colors">
+                                    <SiAdobeillustrator className="w-6 h-6 md:w-[2.22vw] md:h-[2.22vw] text-[#0071e3]" />
+                                </div>
+                                <div>
+                                    <h4 className="text-base md:text-[1.38vw] text-[#f5f5f7]">Illustrator</h4>
+                                    <p className="text-sm md:text-[1.11vw] text-[#86868b]">Vector Graphics</p>
                                 </div>
                             </div>
                         </div>

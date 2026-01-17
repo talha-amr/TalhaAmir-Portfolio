@@ -50,7 +50,7 @@ const Section1 = ({ scrollYProgress }) => {
                     className="mt-12 text-xl px-6 md:px-0 md:text-[1.38vw] text-neutral-400 font-light tracking-[0.2em] uppercase w-full text-center"
                     duration={1.2}
                 >
-                    Frontend Engineer • React • Based in Lahore
+                    Frontend Engineer • UI/UX Designer • Based in Lahore
                 </TextScramble>
 
                 <div className="pt-12 md:pt-[3.33vw]">

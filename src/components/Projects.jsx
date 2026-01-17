@@ -6,6 +6,7 @@ import { Timeline } from '@/components/ui/timeline';
 import velvetPourImg from '../images/velvet-pour.png';
 import zushafiImg from '../images/zushafi.png';
 import zentryImg from '../images/zentry.png';
+import uniconnectImg from '../images/landing-page.png';
 
 const projects = [
     {
@@ -31,7 +32,15 @@ const projects = [
         tags: ["React", "Vite"],
         link: "https://zentry-phi-blue.vercel.app/",
         image: zentryImg
-    }
+    },
+    {
+        title: "UniConnect",
+        status: "Completed",
+        description: "A comprehensive full-stack solution for university administration, featuring a React frontend and a custom-built backend API designed to handle high-concurrency reporting and tracking.",
+        tags: ["React", "Node.js", "Express", "JWT"],
+        link: "https://uni-connect-cloud.vercel.app/",
+        image: uniconnectImg
+    },
 ];
 
 const Projects = () => {

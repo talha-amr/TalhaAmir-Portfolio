@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Zap, TrendingUp, Layout, Globe } from 'lucide-react';
+import { Zap, TrendingUp, Layout, Globe, Palette } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,22 +42,25 @@ const About = () => {
                         </h3>
                         <div className="space-y-6 md:space-y-[1.66vw] text-[#a1a1a6] text-lg md:text-[1.38vw] leading-relaxed max-w-lg md:max-w-[39vw] font-normal tracking-normal">
                             <p>
-                                I am a Software Engineering student at <span className='text-[#f5f5f7]'>PUCIT</span> with professional experience in Frontend Engineering at <span className='text-[#f5f5f7]'>Rozee.pk</span>.
+                                I am a Software Engineering student at <span className='text-[#f5f5f7]'>PUCIT</span> and a Frontend Engineer & UI/UX Designer.
                             </p>
                             <p>
-                                I bridge the gap between logic and design, creating interfaces that feel inevitable. My approach is simple: keep it clean, keep it fast, and respect the user.
+                                I blend technical precision with creative strategy to build digital experiences that feel inevitable. My approach is simple: keep it clean, keep it fast, and respect the user.
+                            </p>
+                            <p>
+                                I don't just write code; I craft journeys. Whether it's wireframing in Figma or optimizing React renders, every decision is intentional and aimed at solving real human problems.
                             </p>
                         </div>
                     </div>
 
                     {/* Column 2: Minimal Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-[1.66vw]">
-                        {/* Card 1: Scalability */}
+                        {/* Card 1: User Centric */}
                         <div className="about-card p-8 md:p-[2.22vw] rounded-2xl md:rounded-[1.11vw] bg-[#16181d] border border-white/5 flex flex-col justify-between h-[240px] md:h-[16.66vw]">
-                            <TrendingUp className="w-6 h-6 md:w-[1.66vw] md:h-[1.66vw] text-[#0071e3]" />
+                            <Palette className="w-6 h-6 md:w-[1.66vw] md:h-[1.66vw] text-[#0071e3]" />
                             <div>
-                                <h4 className="text-lg md:text-[1.25vw] font-semibold text-[#f5f5f7] mb-2 md:mb-[0.55vw]">Scalability</h4>
-                                <p className="text-[15px] md:text-[1.04vw] text-[#a1a1a6] leading-relaxed">Code that grows with your product, not against it.</p>
+                                <h4 className="text-lg md:text-[1.25vw] font-semibold text-[#f5f5f7] mb-2 md:mb-[0.55vw]">User Centric</h4>
+                                <p className="text-[15px] md:text-[1.04vw] text-[#a1a1a6] leading-relaxed">Seamless interactions that guide the user effortlessly.</p>
                             </div>
                         </div>
 
@@ -84,7 +87,7 @@ const About = () => {
                             <Globe className="w-6 h-6 md:w-[1.66vw] md:h-[1.66vw] text-[#0071e3]" />
                             <div>
                                 <h4 className="text-lg md:text-[1.25vw] font-semibold text-[#f5f5f7] mb-2 md:mb-[0.55vw]">The Stack</h4>
-                                <p className="text-[15px] md:text-[1.04vw] text-[#a1a1a6] leading-relaxed">React. Next.js. Tailwind CSS. Modern standards.</p>
+                                <p className="text-[15px] md:text-[1.04vw] text-[#a1a1a6] leading-relaxed">React. Tailwind CSS. Modern standards.</p>
                             </div>
                         </div>
                     </div>
