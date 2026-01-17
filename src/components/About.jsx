@@ -38,7 +38,7 @@ const About = () => {
                     {/* Column 1: The Identity */}
                     <div className="space-y-8 md:space-y-[2.22vw] about-identity">
                         <h3 className="text-4xl md:text-[3.33vw] font-semibold tracking-tight leading-tight text-[#f5f5f7]">
-                            Obsessed with details.
+                           Engineering Design into <span className="text-[#a1a1a6]"> Reality.</span>
                         </h3>
                         <div className="space-y-6 md:space-y-[1.66vw] text-[#a1a1a6] text-lg md:text-[1.38vw] leading-relaxed max-w-lg md:max-w-[39vw] font-normal tracking-normal">
                             <p>
