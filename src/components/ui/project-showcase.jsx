@@ -8,43 +8,52 @@ import zentryImg from "../../images/zentry.png";
 import uniconnectImg from "../../images/landing-page.png";
 
 const projects = [
-{
-title: "Cryonix",
-description: "Premium technology brand experience designed to strengthen credibility, increase engagement, and showcase services through immersive storytelling.",
-year: "2026",
-link: "https://cryonix-peach.vercel.app/",
-image: cryonixImg,
-},
-{
-title: "Velvet Pour",
-description: "Luxury beverage brand website crafted to elevate brand perception, highlight products, and create a memorable customer experience.",
-year: "2025",
-link: "https://velvet-pour-alpha-smoky.vercel.app/",
-image: velvetPourImg,
-},
-{
-title: "ZBS.",
-description: "Professional personal branding website focused on establishing authority, showcasing expertise, and attracting potential clients.",
-year: "2025",
-link: "https://www.zushafi.com/",
-image: zushafiImg,
-},
-{
-title: "Zentry",
-description: "Interactive digital experience combining modern design and motion to increase engagement and strengthen brand identity.",
-year: "2025",
-link: "https://zentry-phi-blue.vercel.app/",
-image: zentryImg,
-},
-{
-title: "UniConnect",
-description: "University management platform built to streamline administrative workflows, reporting, and student record management.",
-year: "2024",
-link: "https://uni-connect-cloud.vercel.app/",
-image: uniconnectImg,
-},
+  {
+    title: "Cryonix",
+    category: "Premium Technology Brand",
+    description:
+      "Premium technology brand experience designed to strengthen credibility, increase engagement, and showcase services through immersive storytelling.",
+    year: "2026",
+    link: "https://cryonix-peach.vercel.app/",
+    image: cryonixImg,
+  },
+  {
+    title: "Velvet Pour",
+    category: "Luxury Beverage Experience",
+    description:
+      "Luxury beverage brand website crafted to elevate brand perception, highlight products, and create a memorable customer experience.",
+    year: "2025",
+    link: "https://velvet-pour-alpha-smoky.vercel.app/",
+    image: velvetPourImg,
+  },
+  {
+    title: "ZBS.",
+    category: "Personal Brand Platform",
+    description:
+      "Professional personal branding website focused on establishing authority, showcasing expertise, and attracting potential clients.",
+    year: "2025",
+    link: "https://www.zushafi.com/",
+    image: zushafiImg,
+  },
+  {
+    title: "Zentry",
+    category: "Interactive Digital Experience",
+    description:
+      "Interactive digital experience combining modern design and motion to increase engagement and strengthen brand identity.",
+    year: "2025",
+    link: "https://zentry-phi-blue.vercel.app/",
+    image: zentryImg,
+  },
+  {
+    title: "UniConnect",
+    category: "Education Management Platform",
+    description:
+      "University management platform built to streamline administrative workflows, reporting, and student record management.",
+    year: "2024",
+    link: "https://uni-connect-cloud.vercel.app/",
+    image: uniconnectImg,
+  },
 ];
-
 
 export function ProjectShowcase() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -97,7 +106,11 @@ export function ProjectShowcase() {
   };
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-[92vw] md:max-w-[88vw] mx-auto px-6 py-16 md:py-[8vw]">
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative w-full max-w-[92vw] md:max-w-[88vw] mx-auto px-6 py-16 md:py-[8vw]"
+    >
       <h2 className="text-3xl md:text-[5.2vw] font-bold text-foreground tracking-tight mb-8 md:mb-[5vw] text-center">
         Selected Work
       </h2>
@@ -107,10 +120,13 @@ export function ProjectShowcase() {
         style={{
           left: containerRef.current?.getBoundingClientRect().left ?? 0,
           top: containerRef.current?.getBoundingClientRect().top ?? 0,
-          transform: `translate3d(${smoothPosition.x + 20}px, ${smoothPosition.y - 100}px, 0)`,
+          transform: `translate3d(${smoothPosition.x + 20}px, ${
+            smoothPosition.y - 100
+          }px, 0)`,
           opacity: isVisible ? 1 : 0,
           scale: isVisible ? 1 : 0.8,
-          transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition:
+            "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
         <div className="relative w-[30vw] h-[35vh] bg-secondary rounded-xl overflow-hidden border border-border">
@@ -127,7 +143,6 @@ export function ProjectShowcase() {
               }}
             />
           ))}
-          {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
         </div>
       </div>
@@ -144,23 +159,24 @@ export function ProjectShowcase() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="relative py-6 md:py-[1.9vw] border-t border-border transition-all duration-300 ease-out group-last:border-b">
-              {/* Background highlight on hover */}
               <div
                 className={`
                   absolute inset-0 -mx-4 px-4 bg-secondary/50 rounded-lg md:rounded-[0.55vw]
                   transition-all duration-300 ease-out
-                  ${hoveredIndex === index ? "opacity-100 scale-100" : "opacity-0 scale-95"}
+                  ${
+                    hoveredIndex === index
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95"
+                  }
                 `}
               />
 
               <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4">
                 <div className="flex-1 min-w-0">
-                  {/* Title with animated underline */}
                   <div className="inline-flex items-center gap-2">
                     <h3 className="text-foreground font-medium text-xl md:text-[1.5vw] tracking-tight">
                       <span className="relative">
                         {project.title}
-                        {/* Animated underline */}
                         <span
                           className={`
                             absolute left-0 -bottom-0.5 h-[2px] bg-foreground
@@ -171,7 +187,6 @@ export function ProjectShowcase() {
                       </span>
                     </h3>
 
-                    {/* Arrow that slides in */}
                     <ArrowUpRight
                       className={`
                         w-5 h-5 md:w-[1.5vw] md:h-[1.5vw] text-muted-foreground
@@ -185,22 +200,46 @@ export function ProjectShowcase() {
                     />
                   </div>
 
-                  {/* Description with fade effect */}
+                  {/* NEW CATEGORY LINE */}
                   <p
                     className={`
-                      text-muted-foreground text-sm md:text-[1.3vw] mt-1 md:mt-[0.5vw] leading-relaxed
-                      transition-all duration-300 ease-out max-w-[80vw] md:max-w-[45vw]
-                      ${hoveredIndex === index ? "text-foreground/80" : "text-muted-foreground"}
+                      text-[11px] md:text-[0.82vw]
+                      uppercase tracking-[0.12em]
+                      text-muted-foreground/70
+                      mt-4
+                      transition-all duration-300 ease-out
+                      ${
+                        hoveredIndex === index
+                          ? "text-foreground/60"
+                          : "text-muted-foreground/70"
+                      }
+                    `}
+                  >
+                    {project.category}
+                  </p>
+
+                  <p
+                    className={`
+                      text-muted-foreground text-sm md:text-[1.3vw]
+                      mt-2 md:mt-[0.6vw]
+                      leading-relaxed
+                      transition-all duration-300 ease-out
+                      max-w-[80vw] md:max-w-[45vw]
+                      ${
+                        hoveredIndex === index
+                          ? "text-foreground/80"
+                          : "text-muted-foreground"
+                      }
                     `}
                   >
                     {project.description}
                   </p>
                 </div>
 
-                {/* Year badge */}
                 <span
                   className={`
-                    text-xs mb-auto mt-1 md:text-[0.9vw] font-mono text-muted-foreground tabular-nums shrink-0
+                    text-xs mb-auto mt-1 md:text-[0.9vw]
+                    font-mono text-muted-foreground tabular-nums shrink-0
                     transition-all duration-300 ease-out
                     ${hoveredIndex === index ? "text-foreground/80" : ""}
                   `}
@@ -208,9 +247,12 @@ export function ProjectShowcase() {
                   {project.year}
                 </span>
 
-                {/* Mobile Image (Visible only on small screens) */}
                 <div className="mt-4 md:hidden w-full aspect-video rounded-lg overflow-hidden border border-border bg-secondary">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
