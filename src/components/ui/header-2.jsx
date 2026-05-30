@@ -83,7 +83,7 @@ export function Header() {
                                 "ml-2 inline-flex items-center justify-center px-6 py-2.5 md:ml-[0.55vw] md:px-[1.66vw] md:py-[0.69vw] text-sm md:text-[0.97vw] font-semibold rounded-full transition-all duration-300 hover:scale-105 leading-none bg-white text-black hover:bg-neutral-200"
                             )}
                         >
-                            Lets Talk
+                            Let's Talk
                         </a>
                     </div>
                     <Button size="icon" variant="ghost" onClick={() => setOpen(!open)} className="md:hidden">
@@ -126,7 +126,7 @@ export function Header() {
                             className={cn(buttonVariants({ variant: 'default' }), "w-full bg-[#f5f5f7] text-black hover:bg-white h-16 text-xl font-bold rounded-2xl")}
                             onClick={() => setOpen(false)}
                         >
-                            Lets Talk
+                            Let's Talk
                         </a>
                     </div>
                 </div>

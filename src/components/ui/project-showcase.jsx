@@ -8,42 +8,43 @@ import zentryImg from "../../images/zentry.png";
 import uniconnectImg from "../../images/landing-page.png";
 
 const projects = [
-  {
-    title: "Cryonix",
-    description: "Cinematic web journey featuring fluid storytelling, smooth animations, and 3D-inspired visuals.",
-    year: "2026",
-    link: "https://cryonix-peach.vercel.app/",
-    image: cryonixImg,
-  },
-  {
-    title: "Velvet Pour",
-    description: "Visually refined beverage brand website with elegant UI and smooth transitions.",
-    year: "2025",
-    link: "https://velvet-pour-alpha-smoky.vercel.app/",
-    image: velvetPourImg,
-  },
-  {
-    title: "ZBS.",
-    description: "Professional portfolio website emphasizing clean layout, typography, and performance.",
-    year: "2025",
-    link: "https://www.zushafi.com/",
-    image: zushafiImg,
-  },
-  {
-    title: "Zentry",
-    description: "Modern layouts exploration with interactive UI elements and advanced animations.",
-    year: "2025",
-    link: "https://zentry-phi-blue.vercel.app/",
-    image: zentryImg,
-  },
-  {
-    title: "UniConnect",
-    description: "Full-stack university administration solution handling high-concurrency reporting.",
-    year: "2024",
-    link: "https://uni-connect-cloud.vercel.app/",
-    image: uniconnectImg,
-  },
+{
+title: "Cryonix",
+description: "Premium technology brand experience designed to strengthen credibility, increase engagement, and showcase services through immersive storytelling.",
+year: "2026",
+link: "https://cryonix-peach.vercel.app/",
+image: cryonixImg,
+},
+{
+title: "Velvet Pour",
+description: "Luxury beverage brand website crafted to elevate brand perception, highlight products, and create a memorable customer experience.",
+year: "2025",
+link: "https://velvet-pour-alpha-smoky.vercel.app/",
+image: velvetPourImg,
+},
+{
+title: "ZBS.",
+description: "Professional personal branding website focused on establishing authority, showcasing expertise, and attracting potential clients.",
+year: "2025",
+link: "https://www.zushafi.com/",
+image: zushafiImg,
+},
+{
+title: "Zentry",
+description: "Interactive digital experience combining modern design and motion to increase engagement and strengthen brand identity.",
+year: "2025",
+link: "https://zentry-phi-blue.vercel.app/",
+image: zentryImg,
+},
+{
+title: "UniConnect",
+description: "University management platform built to streamline administrative workflows, reporting, and student record management.",
+year: "2024",
+link: "https://uni-connect-cloud.vercel.app/",
+image: uniconnectImg,
+},
 ];
+
 
 export function ProjectShowcase() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -96,8 +97,8 @@ export function ProjectShowcase() {
   };
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-4xl mx-auto px-6 py-16 md:py-[4.44vw]">
-      <h2 className="text-3xl md:text-[5vw] font-bold text-foreground tracking-tight mb-8 md:mb-[2.22vw] text-center">
+    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-[92vw] md:max-w-[88vw] mx-auto px-6 py-16 md:py-[8vw]">
+      <h2 className="text-3xl md:text-[5.2vw] font-bold text-foreground tracking-tight mb-8 md:mb-[5vw] text-center">
         Selected Work
       </h2>
 
@@ -112,7 +113,7 @@ export function ProjectShowcase() {
           transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <div className="relative w-[320px] h-[200px] bg-secondary rounded-xl overflow-hidden border border-border">
+        <div className="relative w-[30vw] h-[35vh] bg-secondary rounded-xl overflow-hidden border border-border">
           {projects.map((project, index) => (
             <img
               key={project.title}
@@ -131,7 +132,7 @@ export function ProjectShowcase() {
         </div>
       </div>
 
-      <div className="space-y-0 relative z-10 w-full md:max-w-2xl mx-auto">
+      <div className="space-y-0 relative z-10 w-full md:max-w-[70vw] mx-auto">
         {projects.map((project, index) => (
           <a
             key={project.title}
@@ -142,7 +143,7 @@ export function ProjectShowcase() {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="relative py-6 md:py-[1.5vw] border-t border-border transition-all duration-300 ease-out group-last:border-b">
+            <div className="relative py-6 md:py-[1.9vw] border-t border-border transition-all duration-300 ease-out group-last:border-b">
               {/* Background highlight on hover */}
               <div
                 className={`
@@ -187,8 +188,8 @@ export function ProjectShowcase() {
                   {/* Description with fade effect */}
                   <p
                     className={`
-                      text-muted-foreground text-sm md:text-[1.1vw] mt-1 md:mt-[0.27vw] leading-relaxed
-                      transition-all duration-300 ease-out max-w-lg
+                      text-muted-foreground text-sm md:text-[1.3vw] mt-1 md:mt-[0.5vw] leading-relaxed
+                      transition-all duration-300 ease-out max-w-[80vw] md:max-w-[45vw]
                       ${hoveredIndex === index ? "text-foreground/80" : "text-muted-foreground"}
                     `}
                   >
