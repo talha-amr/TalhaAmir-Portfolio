@@ -70,9 +70,8 @@ const Section1 = ({ scrollYProgress }) => {
                         transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         className="w-full flex justify-center md:justify-end mt-5 md:mt-10"
                     >
-                        <p className="text-neutral-300 text-sm md:text-[1.4vw] max-w-[320px] md:max-w-[35vw] text-center md:text-right tracking-tight leading-relaxed font-medium">
-                            Hi, I'm Talha, a Frontend Engineer & UI/UX Designer crafting high-end, interactive digital experiences.
-                        </p>
+                        <p className="text-neutral-300 text-sm md:text-[1.4vw] max-w-[320px] md:max-w-[39vw] text-center md:text-right tracking-tight leading-relaxed font-medium">
+Hi, I'm Talha, a Frontend Engineer & UI/UX Designer creating modern websites that engage users and strengthen brands.                        </p>
                     </motion.div>
 
                     {/* CTA Button */}
