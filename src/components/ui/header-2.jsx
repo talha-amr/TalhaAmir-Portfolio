@@ -22,6 +22,10 @@ export function Header() {
             label: 'Work',
             href: '#projects',
         },
+        {
+            label: 'Services',
+            href: '#services',
+        },
     ];
 
     React.useEffect(() => {
