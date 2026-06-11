@@ -4,6 +4,7 @@ import { useScroll, useTransform, motion } from "motion/react";
 import React, { useRef, forwardRef } from "react";
 import { TextScramble } from "./text-scramble";
 import Magnetic from "./magnetic";
+import talhaBusImg from "../../images/talha-bus(1).jpeg";
 
 const Section1 = ({ scrollYProgress }) => {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -36,7 +37,7 @@ const Section1 = ({ scrollYProgress }) => {
                     <div className="relative w-[60vw] max-w-[40vh] md:w-full md:max-w-[26vw] aspect-[3/4] rounded-3xl p-2 border border-white/5 bg-[#ffffff03] backdrop-blur-sm shadow-2xl">
                         <div className="w-full h-full rounded-2xl overflow-hidden relative bg-[#121212]">
                             <img
-                                src="/talha.png"
+                                src={talhaBusImg}
                                 alt="Talha Portrait"
                                 className="w-full h-full object-cover object-center"
                             />
