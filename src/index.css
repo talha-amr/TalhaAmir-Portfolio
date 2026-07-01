@@ -39,6 +39,11 @@ html.lenis body {
   --color-border: rgba(255, 255, 255, 0.1);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   @apply bg-neutral-950 text-neutral-400 font-sans antialiased;
 }
