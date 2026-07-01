@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 
+import basilicoImg from "../../images/basilico-concept.png";
 import cryonixImg from "../../images/cryonix-1.png";
 import velvetPourImg from "../../images/velvet-pour.png";
 import zushafiImg from "../../images/zushafi.png";
@@ -8,6 +9,15 @@ import zentryImg from "../../images/zentry.png";
 import uniconnectImg from "../../images/landing-page.png";
 
 const projects = [
+  {
+    title: "Basilico",
+    category: "Luxury Restaurant Experience",
+    description:
+      "A premium digital dining experience for a luxury Italian restaurant, featuring immersive GSAP animations and sophisticated visual storytelling.",
+    year: "2026",
+    link: "https://basilico-concept.vercel.app/",
+    image: basilicoImg,
+  },
   {
     title: "Cryonix",
     category: "Premium Technology Brand",
