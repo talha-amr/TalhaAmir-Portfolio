@@ -1,16 +1,65 @@
-# React + Vite
+# Talha Amir — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A motion-focused developer portfolio built to present selected work, technical capabilities, and services through a polished interactive experience.
 
-Currently, two official plugins are available:
+[View repository](https://github.com/talha-amr/TalhaAmir-Portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+The portfolio combines smooth scrolling, timeline-based animation, and responsive layouts to create a focused personal brand experience. Its sections cover an introduction, skills, featured projects, services, contact information, and availability.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Highlights
 
-## Expanding the ESLint configuration
+- Motion-driven hero and page transitions
+- Smooth scrolling synchronized with GSAP
+- Scroll-triggered reveals and interactive sections
+- Responsive project and skills presentation
+- Dedicated services and contact sections
+- Reusable component-based architecture
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built with
+
+- React 19
+- Vite
+- Tailwind CSS 4
+- GSAP and ScrollTrigger
+- Framer Motion
+- Lenis
+- Radix UI and Lucide React
+
+## Run locally
+
+```bash
+git clone https://github.com/talha-amr/TalhaAmir-Portfolio.git
+cd TalhaAmir-Portfolio
+npm install
+npm run dev
+```
+
+Open the local URL displayed by Vite.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project structure
+
+```text
+src/
+├── components/
+│   ├── Hero
+│   ├── About
+│   ├── Skills
+│   ├── Projects
+│   ├── Services
+│   ├── Contact
+│   └── Footer
+└── App.jsx
+```
+
+## Author
+
+**Muhamad Talha Amir** — [GitHub](https://github.com/talha-amr)
