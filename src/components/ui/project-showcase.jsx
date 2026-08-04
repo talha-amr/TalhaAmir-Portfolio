@@ -7,8 +7,18 @@ import velvetPourImg from "../../images/velvet-pour.png";
 import zushafiImg from "../../images/zushafi.png";
 import zentryImg from "../../images/zentry.png";
 import uniconnectImg from "../../images/landing-page.png";
+import organicPulpsImg from "../../images/organic-pulp-ss.png";
 
 const projects = [
+  {
+    title: "Organic Pulps",
+    category: "Headless Shopify Experience",
+    description:
+      "A custom ecommerce experience featuring Shopify product and checkout integration, responsive design, and immersive GSAP animations.",
+    year: "2026",
+    link: "https://organicpulps.com/",
+    image: organicPulpsImg,
+  },
   {
     title: "Basilico",
     category: "Luxury Restaurant Experience",
